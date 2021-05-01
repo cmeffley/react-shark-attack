@@ -7,7 +7,7 @@ function GraveStone({
   lastName
 }) {
   return (
-    <div className='liveStudent'>
+    <div className='graveStone'>
       <Card>
         <CardTitle>{firstName} {lastName}</CardTitle>
       </Card>

@@ -16,8 +16,8 @@ function LiveStudent({
 }
 
 LiveStudent.propTypes = {
-  firstName: PropTypes.array.isRequired,
-  lastName: PropTypes.array.isRequired
+  firstName: PropTypes.string.isRequired,
+  lastName: PropTypes.string.isRequired
 };
 
 export default LiveStudent;

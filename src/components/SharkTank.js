@@ -1,18 +1,23 @@
 import React from 'react';
-import { livingStudents } from '../helpers/data/studentsData';
+import PropTypes from 'prop-types';
 import LiveStudent from './LiveStudent';
 
-function SharkTank() {
+function SharkTank({ livingStudents }) {
   return (
     <div className='sharkTank'>
-      {livingStudents.array.forEach((element) => {
-        <LiveStudent
-          firstName={element.firstName}
-          lastName={element.lastName}
-        />;
-      })}
+      <h2><strong>SHARK TANK</strong></h2>
+      {livingStudents.map((student) => ( // Creating a new array inside the shark tank of all live students
+        <LiveStudent key={student.id}
+          firstName={student.firstName}
+          lastName={student.lastName}
+        />
+      ))}
     </div>
   );
 }
+
+SharkTank.propTypes = {
+  livingStudents: PropTypes.array.isRequired
+};
 
 export default SharkTank;

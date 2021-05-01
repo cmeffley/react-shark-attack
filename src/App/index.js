@@ -1,18 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { Button } from 'reactstrap';
 import SharkTank from '../components/SharkTank';
-import { students } from '../helpers/data/studentsData';
+import GraveYard from '../components/GraveYard';
+import { dearlyBeloved, followTheLight, livingStudents } from '../helpers/data/studentsData';
 import './App.scss';
 
 function App() {
-  const [liveStudent, setLiveStudent] = useState([]);
-  console.warn(liveStudent);
-  useEffect(() => {
-    setLiveStudent(students);
-  }, []);
+  const handleClick = (e) => {
+    e.preventDefault();
+    followTheLight();
+  };
 
   return (
     <div className='App'>
-      <SharkTank />
+      <Button className='shark-btn' color='info' onClick={handleClick}>SHARK ATTACK</Button>
+      <SharkTank livingStudents={livingStudents}/>
+      <GraveYard dearlyBeloved={dearlyBeloved}/>
     </div>
   );
 }
