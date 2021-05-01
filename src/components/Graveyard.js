@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import GraveStone from './GraveStone';
 
-function GraveYard({ dearlyBeloved }) {
+function GraveYard({ deadStudents }) {
   return (
     <div className='Graveyard'>
       <h2>GRAVE YARD</h2>
-      {dearlyBeloved.map((student) => (
+      {deadStudents.map((student) => (
       <GraveStone key={student.id}
         firstName={student.firstName}
         lastName={student.lastName}
@@ -17,7 +17,7 @@ function GraveYard({ dearlyBeloved }) {
 }
 
 GraveYard.propTypes = {
-  dearlyBeloved: PropTypes.array.isRequired
+  deadStudents: PropTypes.array.isRequired
 };
 
 export default GraveYard;

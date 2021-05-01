@@ -21,7 +21,7 @@ const students = [
     id: 4,
     firstName: 'Chris',
     lastName: 'Meffley',
-    isDead: true,
+    isDead: false,
   },
   {
     id: 5,
@@ -151,18 +151,22 @@ const students = [
   }
 ];
 
-// Creating arrays with the filter methods
-const livingStudents = students.filter((student) => student.isDead === false);
+const livingStudents = () => students.filter((student) => student.isDead === false);
 
-const dearlyBeloved = students.filter((student) => student.isDead === true);
+const dearlyBeloved = () => students.filter((student) => student.isDead === true);
 
 const followTheLight = () => {
-  const attacked = students[Math.floor(Math.random() * students.length)];
-  attacked.isDead = true;
-  console.warn(attacked);
+  const currentLiveStudents = livingStudents();
+  const attacked = currentLiveStudents[Math.floor(Math.random() * currentLiveStudents.length)];
+
+  const index = students.indexOf(attacked);
+  students[index].isDead = true;
+
+  return [livingStudents(), dearlyBeloved()]; // getting the updated students arrays
 };
 
 export {
+  students,
   livingStudents,
   dearlyBeloved,
   followTheLight
