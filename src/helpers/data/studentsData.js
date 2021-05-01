@@ -151,19 +151,18 @@ const students = [
   }
 ];
 
-const livingStudents = (student) => {
-  students.map(student.isDead === false);
-};
+const livingStudents = () => students.filter((student) => student.isDead === false);
 
-const dearlyBeloved = (student) => {
-  students.map(student.isDead === true);
-};
+const dearlyBeloved = () => students.filter((student) => student.isDead === true);
 
 const followTheLight = () => {
-  const getStudent = students[Math.floor(Math.random() * students.length)];
-  if (students[getStudent].isDead === false) {
-    students[getStudent].isDead = true;
-  }
+  const currentLiveStudents = livingStudents();
+  const attacked = currentLiveStudents[Math.floor(Math.random() * currentLiveStudents.length)];
+
+  const index = students.indexOf(attacked);
+  students[index].isDead = true;
+
+  return [livingStudents(), dearlyBeloved()]; // getting the updated students arrays
 };
 
 export {

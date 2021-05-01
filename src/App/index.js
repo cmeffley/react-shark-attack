@@ -1,36 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Button } from 'reactstrap';
+import SharkTank from '../components/SharkTank';
+import GraveYard from '../components/GraveYard';
+import { dearlyBeloved, followTheLight, livingStudents } from '../helpers/data/studentsData';
 import './App.scss';
 
 function App() {
-  const [domWriting, setDomWriting] = useState('Nothing Here!');
+  const [liveStudents, setLiveStudents] = useState([]);
+  const [deadStudents, setDeadStudents] = useState([]);
+
+  useEffect(() => {
+    setLiveStudents(livingStudents());
+    setDeadStudents(dearlyBeloved());
+  }, []);
 
   const handleClick = (e) => {
-    console.warn(`You clicked ${e.target.id}`);
-    setDomWriting(`You clicked ${e.target.id}! Check the Console!`);
+    e.preventDefault();
+    const [living, dead] = followTheLight();
+    setLiveStudents(living); // OPTION: can pass livingStudents function instead of the declared taco (living)
+    setDeadStudents(dead);
   };
 
   return (
     <div className='App'>
-      <h2>INSIDE APP COMPONENT</h2>
-      <div>
-        <button
-          id='this-button'
-          className='btn btn-info'
-          onClick={handleClick}
-        >
-          I am THIS button
-        </button>
-      </div>
-      <div>
-        <button
-          id='that-button'
-          className='btn btn-primary mt-3'
-          onClick={handleClick}
-        >
-          I am THAT button
-        </button>
-      </div>
-      <h3>{domWriting}</h3>
+      <Button
+        className='shark-btn'
+        color='info'
+        onClick={handleClick}
+        disabled={liveStudents.length <= 0}
+      >SHARK ATTACK
+      </Button>
+      <SharkTank liveStudents={liveStudents}/>
+      <GraveYard deadStudents={deadStudents}/>
     </div>
   );
 }
