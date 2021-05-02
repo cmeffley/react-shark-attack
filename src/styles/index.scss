@@ -2,5 +2,23 @@
 @import 'variables';
 
 body {
-  background-color: $favColor;
+  background-color: $favColor !important;
+}
+
+#aliveCard {
+  background-color: rgb(145, 145, 197);
+   margin: auto;
+   margin-bottom: 10px;
+   width: 50%
+}
+
+#deadCard {
+  background-image: url('https://images.fineartamerica.com/images-medium-large-5/rip-halloween-tombstone-aimee-l-maher.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: white;
+  margin: auto;
+  margin-bottom: 10px;
+  width: 300px; 
+  height: 300px;
 }

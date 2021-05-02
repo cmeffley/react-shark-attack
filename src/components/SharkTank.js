@@ -17,7 +17,8 @@ function SharkTank({ liveStudents }) {
 }
 
 SharkTank.propTypes = {
-  liveStudents: PropTypes.array.isRequired
+  liveStudents: PropTypes.array.isRequired,
+  color: PropTypes.string
 };
 
 export default SharkTank;
