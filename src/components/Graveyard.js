@@ -5,7 +5,6 @@ import GraveStone from './GraveStone';
 function GraveYard({ deadStudents }) {
   return (
     <div className='Graveyard'>
-      <h2>GRAVE YARD</h2>
       {deadStudents.map((student) => (
       <GraveStone key={student.id}
         firstName={student.firstName}

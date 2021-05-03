@@ -8,6 +8,7 @@ import './App.scss';
 function App() {
   const [liveStudents, setLiveStudents] = useState([]);
   const [deadStudents, setDeadStudents] = useState([]);
+  const [image, setImage] = useState(false);
 
   useEffect(() => {
     setLiveStudents(livingStudents());
@@ -19,18 +20,24 @@ function App() {
     const [living, dead] = followTheLight();
     setLiveStudents(living); // OPTION: can pass livingStudents function instead of the declared taco (living)
     setDeadStudents(dead);
+    setImage(!image);
   };
 
   return (
     <div className='App'>
       <Button
         className='shark-btn'
-        color='info'
+        color='danger'
         onClick={handleClick}
         disabled={liveStudents.length <= 0}
       >SHARK ATTACK
       </Button>
-      <SharkTank liveStudents={liveStudents}/>
+    <div className='sharkImage'>
+      {image && <img src='https://www.surfertoday.com/images/stories/greatwhiteshark7.jpg' alt='Shark Attack' />}
+    </div>
+      <h2><strong>SHARK TANK</strong></h2>
+      <SharkTank liveStudents={liveStudents}/><br />
+      <h2 id='graves'><strong>GRAVE YARD</strong></h2>
       <GraveYard deadStudents={deadStudents}/>
     </div>
   );

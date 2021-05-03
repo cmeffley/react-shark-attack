@@ -8,7 +8,7 @@ function GraveStone({
 }) {
   return (
     <div className='graveStone'>
-      <Card body id='deadCard'>
+      <Card body id='deadCard' className='card m-3'>
         <CardTitle>{firstName} {lastName}</CardTitle>
       </Card>
     </div>

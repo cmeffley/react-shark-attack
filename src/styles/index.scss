@@ -2,23 +2,31 @@
 @import 'variables';
 
 body {
-  background-color: $favColor !important;
+  background-image: url('https://media.giphy.com/media/3oz8xvWqlAzjplKaEE/giphy.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.Graveyard, .sharkTank {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+#graves {
+  color: white;
 }
 
 #aliveCard {
-  background-color: rgb(145, 145, 197);
-   margin: auto;
-   margin-bottom: 10px;
-   width: 50%
-}
-
-#deadCard {
-  background-image: url('https://images.fineartamerica.com/images-medium-large-5/rip-halloween-tombstone-aimee-l-maher.jpg');
+  background-image: url('https://i.insider.com/57a4db38dd089551028b465b?width=1136&format=jpeg');
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+
+#deadCard {
+  background-image: url('https://media.wired.com/photos/5926a81baf95806129f50326/master/pass/GravestoneHP-186755520.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
   color: white;
-  margin: auto;
-  margin-bottom: 10px;
-  width: 300px; 
-  height: 300px;
 }
