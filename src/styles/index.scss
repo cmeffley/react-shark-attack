@@ -2,5 +2,33 @@
 @import 'variables';
 
 body {
-  background-color: $favColor;
+  background-image: url('https://media.giphy.com/media/3oz8xur099boo4N9aU/giphy.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.Graveyard, .sharkTank {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+#graves {
+  color: white;
+}
+
+#aliveCard {
+  background-image: url('https://i.insider.com/57a4db38dd089551028b465b?width=1136&format=jpeg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+#deadCard {
+  background-image: url('https://media.wired.com/photos/5926a81baf95806129f50326/master/pass/GravestoneHP-186755520.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  height: 150px;
+  width: 250px;
 }

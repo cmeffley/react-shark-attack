@@ -8,8 +8,9 @@ function GraveStone({
 }) {
   return (
     <div className='graveStone'>
-      <Card>
-        <CardTitle>{firstName} {lastName}</CardTitle>
+      <Card body id='deadCard' className='card m-3'>
+        <CardTitle>{firstName}</CardTitle>
+        <CardTitle>{lastName}</CardTitle>
       </Card>
     </div>
   );

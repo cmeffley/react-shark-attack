@@ -8,7 +8,7 @@ function LiveStudent({
 }) {
   return (
     <div className='liveStudent'>
-      <Card>
+      <Card body id='aliveCard' className='card m-3'>
         <CardTitle>{firstName} {lastName}</CardTitle>
       </Card>
     </div>
