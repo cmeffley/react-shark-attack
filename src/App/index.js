@@ -25,13 +25,14 @@ function App() {
 
   return (
     <div className='App'>
-      <Button
+      {image ? <Button>Back in the Water</Button>
+        : <Button
         className='shark-btn'
         color='danger'
         onClick={handleClick}
         disabled={liveStudents.length <= 0}
       >SHARK ATTACK
-      </Button>
+      </Button>}
     <div className='sharkImage'>
       {image && <img src='https://www.surfertoday.com/images/stories/greatwhiteshark7.jpg' alt='Shark Attack' />}
     </div>
