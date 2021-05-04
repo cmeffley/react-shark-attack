@@ -20,18 +20,18 @@ function App() {
     const [living, dead] = followTheLight();
     setLiveStudents(living); // OPTION: can pass livingStudents function instead of the declared taco (living)
     setDeadStudents(dead);
-    setImage(!image);
+    setImage(true);
   };
 
   return (
     <div className='App'>
-      {image ? <Button>Back in the Water</Button>
+      {image ? <Button size='lg' color='warning' onClick={() => setImage(false)}>IT&apos;S SAFE, Everyone Back in the Water</Button>
         : <Button
         className='shark-btn'
         color='danger'
         onClick={handleClick}
         disabled={liveStudents.length <= 0}
-      >SHARK ATTACK
+      >Careful, there could be a <strong>SHARK ATTACK!</strong>
       </Button>}
     <div className='sharkImage'>
       {image && <img src='https://www.surfertoday.com/images/stories/greatwhiteshark7.jpg' alt='Shark Attack' />}
