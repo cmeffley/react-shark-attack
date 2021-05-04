@@ -2,10 +2,10 @@
 
 Shark Attack is my first React application. It is a simple app, that randomly chooses a fish (NSS Cohort 14 student) to be "attacked" by a shark. 
 
-### Deployed Site
+### [Deployed Site](https://cm-sharkattack.netlify.app/)
 
 ### Features
-- When the user click the red shark attack button, a random fish (student) and sends them to the graveyard.
+- When the user clicks the red shark attack button, a random fish (student) is "attacked" and sent to the graveyard.
 - Then the user pushes the it's safe button and the shark goes away.
 - If all of the fishes are sent to the graveyard, the beach closes.
 
